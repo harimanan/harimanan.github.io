@@ -23,7 +23,7 @@
 </head>
 <body>
 <!--Place all DOM elements here -->
-<p> <span>red</span> this is the paragraph</p>
+<p> Life Expectancy for all regions of the world</p>
 
 <div id="tooltip"></div>
 
@@ -41,7 +41,7 @@ var w = 800;
 var h = 450;
 var margin = {
 	top: 58,
-	bottom: 100,
+	bottom: 120,
 	left: 80,
 	right: 40
 };
@@ -104,7 +104,7 @@ function drawAxis(params){
 				.selectAll("text")
 					.classed("x-axis-label", true)
 					.style("text-anchor", "end")
-					.style("font-size","10px")
+					.style("font-size","12px")
 					.attr("dx", -8)
 					.attr("dy", 8)
 					.attr("transform", "translate(0,0) rotate(-45)");
@@ -130,7 +130,7 @@ function drawAxis(params){
 			.append("text")
 			.attr("x", 20)
 			.attr("y", 10)
-			.style("text-anchor", "middle")
+			.style("text-anchor", "right")
 			.style("font-size","30px")
 			.attr("transform", "translate(" + width/2 + ",80)")
 			.text("Region");
@@ -145,7 +145,7 @@ function drawAxis(params){
 			.call(params.axis.x);
 		this.selectAll(".x-axis-label")
 			.style("text-anchor", "end")
-			.style("font-size","8px")
+			.style("font-size","12px")
 			.attr("dx", -8)
 			.attr("dy", 8)
 			.attr("transform", "translate(0,0) rotate(-45)");
