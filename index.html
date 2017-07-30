@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+.chart rect { fill: steelblue; }
+#tooltip {
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    width: 60px; height: 40px;
+    background: white;
+    border: 0px;
+    pointer-events: none;
+	
+}
+</style>
+
+
 <head>
 	<meta charset="UTF-8">
-	<title>Learning D3</title>
+	<title>CS498 Project</title>
 	<link rel="stylesheet" href="main.css">
 	<script  type="text/javascript" src="d3.min.js"></script>
 </head>
 <body>
 <!--Place all DOM elements here -->
+<p> <span>red</span> this is the paragraph</p>
+
+<div id="tooltip"></div>
+
 <script>
 var data = [
-	{key: "Glazed",		value: 132},
-	{key: "Jelly",		value: 71},
-	{key: "Holes",		value: 337},
-	{key: "Sprinkles",	value: 93},
-	{key: "Crumb",		value: 78},
-	{key: "Chocolate",	value: 43},
-	{key: "Coconut", 	value: 20},
-	{key: "Cream",		value: 16},
-	{key: "Cruller", 	value: 30},
-	{key: "Éclair", 	value: 8},
-	{key: "Fritter", 	value: 17},
-	{key: "Bearclaw", 	value: 21}
+	{key: "East Asia & Pacific",		value: 75.1},
+	{key: "Europe & Central Asia",		value: 77.2},
+	{key: "Latin America & Caribbean",		value: 75.1},
+	{key: "Middle East & North Africa",	value: 73},
+	{key: "North America",		value: 79},
+	{key: "South Asia",	value: 68.4},
+	{key: "Sub-Saharan Africa", 	value: 58.9}
 ];
 var w = 800;
 var h = 450;
@@ -69,8 +83,11 @@ var controls = d3.select("body")
 var sort_btn = controls.append("button")
 				.html("Sort data: ascending")
 				.attr("state", 0);
+				
+var tooltip = d3.select("#tooltip");
+
 function drawAxis(params){
-	
+
 	if(params.initialize === true){
 		//Draw the gridlines and axes
 		//Draw the gridlines
@@ -87,6 +104,7 @@ function drawAxis(params){
 				.selectAll("text")
 					.classed("x-axis-label", true)
 					.style("text-anchor", "end")
+					.style("font-size","10px")
 					.attr("dx", -8)
 					.attr("dy", 8)
 					.attr("transform", "translate(0,0) rotate(-45)");
@@ -103,18 +121,20 @@ function drawAxis(params){
 			.attr("x", 0)
 			.attr("y", 0)
 			.style("text-anchor", "middle")
+			.style("font-size","30px")
 			.attr("transform", "translate(-50," + height/2 + ") rotate(-90)")
-			.text("Units sold");
+			.text("Life Expectancy in Years");
 
 		//This is the x label
 		this.select(".x.axis")
 			.append("text")
-			.attr("x", 0)
-			.attr("y", 0)
+			.attr("x", 20)
+			.attr("y", 10)
 			.style("text-anchor", "middle")
+			.style("font-size","30px")
 			.attr("transform", "translate(" + width/2 + ",80)")
-			.text("Donut type");
-	
+			.text("Region");
+
 	} else if(params.initialize === false){
 		//Update info
 		this.selectAll("g.x.axis")
@@ -125,6 +145,7 @@ function drawAxis(params){
 			.call(params.axis.x);
 		this.selectAll(".x-axis-label")
 			.style("text-anchor", "end")
+			.style("font-size","8px")
 			.attr("dx", -8)
 			.attr("dy", 8)
 			.attr("transform", "translate(0,0) rotate(-45)");
@@ -154,13 +175,33 @@ function plot(params){
 			.append("rect")
 			.classed("bar", true)
 			.on("mouseover", function(d,i){
-				d3.select(this).style("fill", "yellow");
+				d3.select(this).style("fill", "yellow")
+				tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .style("background","white")
+               .style("width","auto")
+               .style("height","auto")
+               .style("padding","10px")
+               .html("Average Life Expectancy of "+d.key+" is "+d.value);
+						
+				
 			})
+			
+			
+			
 			.on("mousemove", function(d,i){
 
 			})
 			.on("mouseout", function(d,i){
-				d3.select(this).style("fill", ordinalColorScale(i));
+				d3.select(this).style("fill", ordinalColorScale(i))
+								tooltip.style("opacity", 0);
+				
+				
+							
+			
+					
+				   
 			});
 
 	this.selectAll(".bar-label")
@@ -168,7 +209,7 @@ function plot(params){
 		.enter()
 			.append("text")
 			.classed("bar-label", true);
-	
+
 	//update
 	this.selectAll(".bar")
 		.transition()
@@ -212,6 +253,9 @@ function plot(params){
 		.data(params.data)
 		.exit()
 		.remove();
+		
+	
+		
 }
 
 sort_btn.on("click", function(){
@@ -256,6 +300,6 @@ plot.call(chart, {
 	gridlines: yGridlines,
 	initialize: true
 });
-</script>	
+</script>
 </body>
 </html>
