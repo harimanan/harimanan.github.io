@@ -8,6 +8,7 @@ body,html{
 #chart{
 	background-color: #F5F2EB;
 	border: 1px solid #CCC;
+	height:500px
 }
 .bar{
 	fill: purple;

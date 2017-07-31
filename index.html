@@ -1,36 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+.chart rect { fill: steelblue; }
+#tooltip {
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    width: 60px; height: 40px;
+    background: white;
+    border: 0px;
+    pointer-events: none;
+	
+}
+</style>
+
+
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="multiline.css">
-    <script src="https://d3js.org/d3.v3.js" charset="utf-8"></script>
-    <!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+	<meta charset="UTF-8">
+	<title>CS498 Project</title>
+	<script  type="text/javascript" src="d3.min.js"></script>
+	<script  src="jquery-3.2.1.min.js"></script>
+	<script  src="jquery.fullPage.min.js"></script>
+	<script  src="jquery-1.11.3.js"></script>
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="jquery.fullPage.css">
+	
+	
 </head>
+
+
+
 <body>
-<div class="chart-wrapper" id="chart-line1"></div>
+<!--Place all DOM elements here -->
 
-<script type="text/javascript">
-    d3.csv('multiline_data.csv', function(error, data) {
-    data.forEach(function (d) {
-        d.year = +d.year;
-        d.variableA = +d.variableA;
-        d.variableB = +d.variableB;
-        d.variableC = +d.variableC;
-        d.variableD = +d.variableD;
-    });
+  
 
-    var chart = makeLineChart(data, 'year', {
-        'Low income': {column: 'Low income'},
-        'Lower middle income': {column: 'Lower middle income'},
-        'Upper middle income': {column: 'Upper middle income'},
-        'High income': {column: 'High income'}
-    }, {xAxis: 'Years', yAxis: 'Life Expectancy'});
-    chart.bind("#chart-line1");
-    chart.render();
+<p> Life Expectancy for all regions of the world</p>
 
+<div id="tooltip"></div>
+<div id="navbar"></div>
+<div id="wrapper"> 
+	<div class="section">
+	
+		<div class="slide">
+	
+			<script type="text/javascript" src="bargraph.js"></script>
+			
+		</div>
+	
+	</div>
+	
+	<div class="section">
+	
+	</div>
+
+</div>
+
+<script>
+$(document).ready(function(){
+$('wrapper').fullpage();
 });
+
 </script>
-<script src="multiline.js" charset="utf-8"></script>
+	
 </body>
+
+
 </html>
