@@ -1,69 +1,201 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<style>
-.chart rect { fill: steelblue; }
-#tooltip {
-    opacity: 0;
-    position: absolute;
-    text-align: center;
-    width: 60px; height: 40px;
-    background: white;
-    border: 0px;
-    pointer-events: none;
-	
-}
-</style>
-
-
-<head>
-	<meta charset="UTF-8">
-	<title>CS498 Project</title>
-	<script  type="text/javascript" src="d3.min.js"></script>
-	<script  src="jquery-3.2.1.min.js"></script>
-	<script  src="jquery.fullPage.min.js"></script>
-	<script  src="jquery-1.11.3.js"></script>
-	<link rel="stylesheet" href="main.css">
-	<link rel="stylesheet" href="jquery.fullPage.css">
-	
-	
-</head>
-
-
-
-<body>
-<!--Place all DOM elements here -->
-
-  
-
-<p> Life Expectancy for all regions of the world</p>
-
-<div id="tooltip"></div>
-<div id="navbar"></div>
-<div id="wrapper"> 
-	<div class="section">
-	
-		<div class="slide">
-	
-			<script type="text/javascript" src="bargraph.js"></script>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css">
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script  type="text/javascript" src="d3.min.js"></script>
+		<script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
+		<script src="jquery-1.11.3.js"></script>
+		<script src="jquery.fullPage.min.js"></script>
+		<link rel="stylesheet" href="jquery.fullPage.css">
+		<link href="https://fonts.googleapis.com/css?family=Raleway|Oxigen|Open+Sans" rel="stylesheet">
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="section" id="sectionImage1" style="width:100%; height:100%; padding-left:3%; padding-right:1.5%;">
+				<div style="float: left; width: 47%;">
+					<div style="font-size: 50px; font-weight: bold; color:#1a1a1a;">Economic Growth and Life Expectancy<br/></div>
+					<p style="font-size: 33.5px; -webkit-margin-before: 0.2em; -webkit-margin-after: 0.2em; color:#404040;">A curious case of correlations</p><br/><br/>
+					<div class="bodyText"><div style="font-size: 16px; font-weight: bold; color:#1a1a1a;">What&#39;s Fertility Rate? </div></br>
+					“Number of children that would be born to a woman if she were to live to the end of her childbearing years.” (World Bank)</br></br>
+					<div style="font-size: 16px; font-weight: bold; color:#1a1a1a;">What are the questions? </div></br>
+					&nbsp;&nbsp;&nbsp;&nbsp;1.	Does Fertility Rate impact economy and happiness?</br>
+					&nbsp;&nbsp;&nbsp;&nbsp;2.	Is it religion related to Fertility Rate?</br></br>
+					<div style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Why?</div></br>
+					If Fertility Rate impacts people&#39;s happiness and economy, then an incentive exists to reduce Fertility Rate on poor and unhappy countries.</br></br>
+					If religion has an impact on Fertility Rate, then governments should consider become secular states to avoid religion dealing with anticonceptive methods and sexual education.</br></br>
+					<div style="font-size: 16px; font-weight: bold; color:#1a1a1a;">What about this visualization?</div></br>
+					Over the next few slides you&#39;ll have the opportunity to draw your own conclusion. Explore the data and play with it. This is just a curious case of correlations.</div>
+				</div>
+			</div>
 			
+			
+			<div class="section" style="width:100%; height:100%; padding-left:3%; padding-right:1%;">
+				<div style="float: right; width: 70%; text-align: center;">
+					<div style="padding-right: 140px; font-size: 20px; font-weight: bold;">Fertility Rate by region<br/></div>
+					
+					<div id="tooltip"></div>
+					<svg id="barchart1" width="800" height="500"></svg>
+					<div id="controls"></div>	
+				
+					
+				</div>
+				<div style="float: left; width: 30%;">
+					<p style="font-size: 60px; font-weight: bold; color:#1a1a1a;">An overview<br/></p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Filter and conquer</p>
+					<p class="bodyText">Let&#39;s start by understanding the evolution of Fertility Rate over time. It looks like Fertility Rate has steadily decreased. Africa is the only exception.</p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">What can you do?</p>
+					<p class="bodyText">Filter by clicking on any element in the legend. Use the brushing bar at the bottom by holding any of the two extremes and moving the context bar from left to right and viceversa. Use each point&#39;s tooltip to get detailed information, just hover over the points in the graph.</p>
+				</div>			
+			</div>
+			
+			
+			<div class="section" style="width:100%; height:100%; padding-left:2.5%; padding-right:7%;">
+			
+				<div style="float: left; width: 70%;">
+				
+				
+					<div style="padding-left: 140px; font-size: 20px; font-weight: bold;">Fertility Rate and GDP per capita in <span id="title">1960</span><br/><br/></div>
+					
+					
+				</div>
+				<div style="float: right; width: 30%;">
+					<p style="font-size: 60px; font-weight: bold; color:#1a1a1a;">Economy<br/></p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Explore over time</p>
+					<p class="bodyText">Now that you have seen an overview of Fertility Rate behavior over time, take this opportunity to dive deeper on the relation between Fertility Rate and GDP per capita from 1960 to 2015. It looks like there is a correlation between these two elements, year by year GDP per capita grows and Fertility Rate diminishes. There is a concerning situation in Africa, where Fertility Rate is pretty high and GDP per capita pretty low. What do you think? Draw your own inferences.</p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">What can you do?</p>
+					<p class="bodyText">Filter by clicking on any element in the legend. You can also see an animation year by year by clicking on Play button or just move the slider to inspect a specific year. You can also check each point&#39;s tooltip to get a deeper insight. The size of the circles is proportional to GDP per capita to remark the difference in the graph.</p>
+				</div>
+			</div>
+		
+
+			<div class="section" style="width:100%; height:100%; padding-left:3%; padding-right:1%;">
+				<div style="float: right; width: 70%; text-align: center;">
+					<div style="padding-right: 140px; font-size: 20px; font-weight: bold;">Fertility Rate and Hapiness Score in 2015<br/></div>
+					
+					<div class="chart-wrapper" id="chart-line1"width="800" height="500"></div>
+
+					<script type="text/javascript">
+						d3.csv('multiline_data.csv', function(error, data) {
+						data.forEach(function (d) {
+							d.year = +d.year;
+							d.variableA = +d.variableA;
+							d.variableB = +d.variableB;
+							d.variableC = +d.variableC;
+							d.variableD = +d.variableD;
+						});
+
+						var chart = makeLineChart(data, 'year', {
+							'Low income': {column: 'Low income'},
+							'Lower middle income': {column: 'Lower middle income'},
+							'Upper middle income': {column: 'Upper middle income'},
+							'High income': {column: 'High income'}
+						}, {xAxis: 'Years', yAxis: 'Life Expectancy'});
+						chart.bind("#chart-line1");
+						chart.render();
+
+					});
+					</script>
+					<script src="multiline.js" charset="utf-8"></script>
+
+					
+					
+				</div>
+				<div style="float: left; width: 30%;">
+					<p style="font-size: 60px; font-weight: bold; color:#1a1a1a;">Happiness<br/></p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Are you happy?</p>
+					<p class="bodyText">Alright, enough GDP per capita. Let&#39;s now compare Fertility Rate with Happiness Score in 2015. At some point of low values of Fertility Rate people have different levels of happiness, nevertheless, those are far higher than the ones with high levels of Fertility Rate. Are you happy? How many children do you have? Tinker with the graph and tell me.</p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">What can you do?</p>
+					<p class="bodyText">Filter by clicking on any element in the legend. Use the brushing bar at the bottom by holding any of the two extremes and moving the context bar from left to right and viceversa. Use each point&#39;s tooltip to get detailed information, just hover over the points in the graph.</p>
+				</div>	
+			</div>
+		
+
+			<div class="section" style="width:100%; height:100%; padding-left:2.5%; padding-right:7%;">
+				<div style="float: left; width: 70%;">
+					<div style="padding-left: 140px; font-size: 20px; font-weight: bold;">Fertility Rate and Religion from 1960 to 2010<br/></div>
+					<svg id="FertilityRateVsReligion" width="800" height="500"></svg>
+				</div>
+				<div style="float: right; width: 30%;">
+					<p style="font-size: 60px; font-weight: bold; color:#1a1a1a;">Religion<br/></p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">What&#39;s its impact?</p>
+					<p class="bodyText">We have shown the possible impact of Fertility Rate on happiness and economy. It&#39;s time to find possible causes on why some countries have higher Fertility Rate. Is country&#39;s prevalent religion somehow related to it? It looks like non-religion has far lower Fertility Rate than animists. Should governments avoid attaching their politics to one specific religion? Play around with the data.</p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">What can you do?</p>
+					<p class="bodyText">Filter by clicking on any element in the legend. Use the brushing bar at the bottom by holding any of the two extremes and moving the context bar from left to right and viceversa. Use each point&#39;s tooltip to get detailed information, just hover over the points in the graph.</p>
+				</div>	
+			</div>
+			
+			
+			<div class="section" style="width:100%; height:100%; padding-left:3%; padding-right:7%;">
+				<div style="float: right; width: 50%;">
+					<div style="padding-left:6%;">
+						<p style="font-size: 15px; font-weight: bold; color:#1a1a1a;">&nbsp;</p>					
+						<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Parameters</p>
+						<p class="bodyText">There are several useful parameters included all over the project. There is an intuitive and dynamic side bar which allows the user to navigate to any slide. If the user hovers over the circles a text will be displayed with the name of the scene. A thick circle is used to represent the current state/slide of the narrative visualization. On the animated slide, there is a button and a slider which control a set of parameters, such as the graph the user is seeing and the year in the title.</p>
+						<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Triggers</p>
+						<p class="bodyText">All the graphs have legends that are triggers as well. When the user clicks on the text or the colored box a section of the graph will be filtered. The parameter that is triggered is the one that controls what to show or not to show in the graph. Same thing happens with the brushing functionality that triggers a change in the scale parameter. On the animated slide, any change on the slider bar or the play button causes a change in the year parameter.</p>
+						<p style="font-size: 16px; font-weight: bold; color:#00aaff;">Cool things to notice</p>
+						<p class="bodyText">- The grid lines are automatically scale when using the brushing functionality.</br>- All the tooltips are automatically scale to fit the text.</br>- The legend&#39;s filters are gray-out when not shown in the graph.</br>- The play button has a nice push animation.</br>- Most of the graphs have a context graph so the user doesn&#39;t get lost when exploring.</p>
+						<p style="font-size: 16px; font-weight: bold; color:red;">Warning</p>
+						<p class="bodyText">This project is meant to be visualized on Chrome (recommended), Firefox, or Safari. It needs a screen with a resolution of at least 1255 X 584 pixels, if it is smaller than that then the user can see colliding objects.</p>
+					</div>
+				</div>
+				<div style="float: left; width: 50%;">
+					<p style="font-size: 40px; font-weight: bold; color:#1a1a1a;">About this visualization<br/></p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Narrative visualization method</p>
+					<p class="bodyText">This project was created based on the hybrid interactive slideshow ordering technique. Guidance is provided on each slide, but the users are free to drill down and list some details or investigate some tangent that they might be interested on or they can choose just to continue.</p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Scenes</p>
+					<p class="bodyText">This project was created as slides thanks to the awesome FullPage.js library in order to keep coherence and make it user-friendly. Each scene is a single chart with a specific goal related to the same subject and in a specific order to best convey the message. A double column layout is used in all the slides alternating the position of the text, this guarantees visual consistency. The same font is used throughout the project as well.</p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Annotations</p>
+					<p class="bodyText">The first scene is used as an introductory slide to explain the “what” and “why” of the project. After that, each slide has two annotations, one that suggests a train of thinking that is used to draw a conclusion at the end (that governments must take seriously fertility rate and that religion is a possible cause of high fertility rate in some countries) and another one that is used to explain the users how to play with the data. There is also a title on each graph (the one that is animated changes automatically year by year), their legends, and their axis labels. All the annotations are cleared on each slide and are independent from each other. All of them use the same font for visual consistency. Each graph has tooltips when hovering over the data points.</p>
+				</div>			
+			</div>
+		
+
+			<div class="section" style="width:100%; height:100%; padding-left:3%; padding-right:7%;">
+				<div style="float: right; width: 50%;">
+					<div style="padding-left:6%;">
+						<p style="font-size: 40px; font-weight: bold; color:#1a1a1a;">Resources</br></p>					
+						<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Links</p>
+						<p class="bodyText">- <a href=https://github.com/alvarotrigo/fullPage.js>FullPage.js</a></br>- <a href=http://data.worldbank.org/indicator/SP.DYN.TFRT.IN>Dataset</a></br>- <a href=https://code.tutsplus.com/tutorials/building-a-multi-line-chart-using-d3js-part-2--cms-22973>Multiline graph</a></br>- <a href=https://bl.ocks.org/mbostock/34f08d5e11952a80609169b7917d4172>Brush and zoom</a></br>- <a href=http://bl.ocks.org/natemiller/7dec148bb6aab897e561>Zoom with multi-line</a></br>- <a href=http://bl.ocks.org/darrenjaworski/5544599>Animated scatter plor</a></br>- <a href=http://bl.ocks.org/cmdoptesc/fc0e318ce7992bed7ca8>Map timeline</a></br>- <a href=https://bl.ocks.org/d3noob/c506ac45617cf9ed39337f99f8511218>Grid lines</a></p>
+					</div>
+				</div>
+				<div style="float: left; width: 50%;">
+					<p style="font-size: 40px; font-weight: bold; color:#1a1a1a;">About the author<br/></p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">The purpose</p>
+					<p class="bodyText">This project is part of masters class CS 498: Data Visualization from University of Illinois Urbana-Champaign.</p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">The author</p>
+					<p class="bodyText">This project was created by <a href=https://www.linkedin.com/in/fvargaspiedra/>Francisco Vargas Piedra</a></p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Disclaimer</p>
+					<p class="bodyText">This is not a conclusive narrative, it is just meant to test abilities on D3 and data visualization concepts applied. All the code that was modified as a base to create some of the elements of the visualization is under the MIT Open License and each reference is expose in the next column.</p>
+				</div>			
+			</div>
 		</div>
-	
-	</div>
-	
-	<div class="section">
-	
-	</div>
+		
+		
+		<a id="footer" href="#About">About this visualization</a>
 
-</div>
+		<script type="text/javascript" src = "barchartcanvas.js"></script>
 
-<script>
-$(document).ready(function(){
-$('wrapper').fullpage();
-});
+		<script>
+			
+			// ***************************************************
+			// ************ Initialize fullpage.js ***************
+			// ***************************************************
+			
+			$(document).ready(function() {
+				$('#wrapper').fullpage({
+					sectionsColor: ['#ffffff', '#ffffff', '#f2f2f2', '#ffffff', '#f2f2f2', '#ffffff', '#f2f2f2'],
+					navigation: true,
+					navigationPosition: 'right',
+					navigationTooltips: ['Intro', 'Region', 'GDP', 'Happiness', 'Religion', 'About', 'Resources'],
+					anchors:['Intro', 'Overview', 'GDP', 'Happiness', 'Religion', 'About', 'Author']
+				});
+			});
 
-</script>
-	
-</body>
-
-
+			
+		</script>
+	</body>
 </html>
