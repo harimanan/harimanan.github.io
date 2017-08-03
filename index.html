@@ -42,7 +42,7 @@
 	<body>
 		<div id="wrapper">
 		
-			<div class="section" id="sectionImage1" style="width:100%; height:100%; padding-left:3%; padding-right:1.5%;">
+			<div class="section" style="width:100%; height:100%; padding-left:3%; padding-right:1.5%;">
 				<div style="float: left; width: 47%;">
 					<div style="font-size: 40px; font-weight: bold; color:#1a1a1a;">On an average, do wealthier countries live longer?<br/></div>
 					<p style="font-size: 25px; -webkit-margin-before: 0.2em; -webkit-margin-after: 0.2em; color:#404040;">Economic Growth and Life Expectancy </p><br/>
@@ -63,6 +63,10 @@
 					
 					Over the next few slides we will have the opportunity to explore the data and interact with the visualizations.</div>
 				</div>
+				
+				<div id="sectionImage1" style="float: right; width: 47%;">
+				</div>
+				
 			</div>
 			
 			
@@ -225,7 +229,7 @@
 					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">D3 Project</p>
 					<p class="bodyText">CS 498: Data Visualization Project from University of Illinois Urbana-Champaign.</p>
 					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">The author</p>
-					<p class="bodyText"> To know more about the author, click <a href=https://www.linkedin.com/in/harimanan/>Hari Manan</a></p>
+					<p class="bodyText"> Know more about the author: <a href=https://www.linkedin.com/in/harimanan/>Hari Manan</a></p>
 					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Disclaimer</p>
 					<p class="bodyText">This Visualization was made to satisfy the requirements of the Data Visualization Project for UIUC. All the code that was modified as a base to create some of the elements of the visualization is under the MIT Open License.</p>
 				</div>			
@@ -276,7 +280,7 @@
 			
 			$(document).ready(function() {
 				$('#wrapper').fullpage({
-					sectionsColor: ['#FFFF99', '#f2f2f2', '#ffffff',  '#EAE1C0', 'whitesmoke', '#ccddff'],
+					sectionsColor: ['#FFFF99', '#f2f2f2', '#ffffff',  'whitesmoke', '#EAE1C0', '#ccddff'],
 					navigation: true,
 					navigationPosition: 'right',
 					navigationTooltips: ['Introduction', 'Regions Life Expectancy', 'GDP vs Life Expectancy', 'Income Groups', 'About the Visualization', 'Author and Resources'],
