@@ -29,8 +29,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet' type='text/css'>
 		
 		
-		
-		
+			
 		<style>
 		
 		
@@ -42,31 +41,28 @@
 	<body>
 		<div id="wrapper">
 		
-			<div class="section" style="width:100%; height:100%; padding-left:3%; padding-right:1.5%;">
-				<div style="float: left; width: 47%;">
-					<div style="font-size: 40px; font-weight: bold; color:#1a1a1a;">On an average, do wealthier countries live longer?<br/></div>
-					<p style="font-size: 25px; -webkit-margin-before: 0.2em; -webkit-margin-after: 0.2em; color:#404040;">Economic Growth and Life Expectancy </p><br/>
-					<div class="bodyText"><div style="font-size: 16px; font-weight: bold; color:#1a1a1a;"> Relation between Income and Life Expectancy</div></br>
+			<div class="section" id="sectionImage1" style="width:100%; height:100%; padding-left:3%; padding-right:1.5%;">
+				<div style="float: left; color: white; width: 60%;">
+					<div style="font-size: 40px; font-weight: bold; color:#afeeee">On an average, do wealthier countries live longer?<br/></div>
+					<p style="font-size: 25px; -webkit-margin-before: 0.2em; -webkit-margin-after: 0.2em; color:afeeee;">Economic Growth and Life Expectancy </p><br/>
+					<div class="bodyText"><div style="font-size: 16px; font-weight: bold; color:afeeee;"> Relation between Income and Life Expectancy</div></br>
 					This project explores the connection between per capita GDP and life expectancy through various interactive visualizations. By interacting with the visualizations the viewer can draw his/her own inferences.</br></br>
 					
-					<div style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Comparison of Life Expectancy Across Regions </div></br>
+					<div style="font-size: 16px; font-weight: bold; color:afeeee;">Comparison of Life Expectancy Across Regions </div></br>
 					We will compare Average Life Expectancy across Regions through an interactive Bar-graph.
 					
-					<div style="font-size: 16px; font-weight: bold; color:#1a1a1a;"></br>GDP vs Life Expectancy</div></br>
+					<div style="font-size: 16px; font-weight: bold; color:afeeee;"></br>GDP vs Life Expectancy</div></br>
 					By using a scatterplot and a vornoi diagram, we will see when we hover over an circle, what is the country name, what is the life expectancy and what is the per capita GDP.
 					</br></br>
 					
-					<div style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Income Groups</div></br>
+					<div style="font-size: 16px; font-weight: bold; color:afeeee;">Income Groups</div></br>
 					We will see the life expectancy changes across income groups. </br></br>
 					
-					<div style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Visualize and Draw Inferences</div></br>
+					<div style="font-size: 16px; font-weight: bold; color:afeeee;">Visualize and Draw Inferences</div></br>
 					
 					Over the next few slides we will have the opportunity to explore the data and interact with the visualizations.</div>
 				</div>
-				
-				<div id="sectionImage1" style="float: right; width: 47%;">
-				</div>
-				
+							
 			</div>
 			
 			
@@ -145,7 +141,7 @@
 					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Life Expectancy Across Income Groups</p>
 					<p class="bodyText">The data is clustered into four income groups as per the dataset – High Income, Upper Middle Income, Lower Middle Income and Low Income. We can observe that there is a significant difference in life expectancy across income groups across all years from 1960 to 2015. As both the Independent and Dependent Variables in this case are Quantitative Continuous, I have taken the line chart to represent the improvement in life expectancy over the years. </p>
 					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Interact with Income Groups</p>
-					<p class="bodyText">Hover over your mouse over the multi-line chart from left to right and vice versa and observe the life expectancy across the four income groups in the tooltip. Use each point&#39;s tooltip to get detailed information, just hover over the points in the graph.</p>
+					<p class="bodyText">Hover over your mouse over the multi-line chart from left to right and vice versa and observe the life expectancy across the four income groups in the tooltip. Use each point&#39;s tooltip to get detailed information, just hover over the points in the graph and you can see the life expectancy across the income groups and that year.</p>
 				</div>	
 			</div>
 		
@@ -156,18 +152,28 @@
 						<p style="font-size: 15px; font-weight: bold; color:#1a1a1a;">&nbsp;</p>					
 						
 						<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Parameters</p>
-						<p class="bodyText">There are several useful parameters included all over the project. There is an intuitive and dynamic side bar which allows the user to navigate to any slide. If the user hovers over the circles a text will be displayed with the name of the scene. A thick circle is used to represent the current state/slide of the narrative visualization. On the animated slide, there is a button and a slider which control a set of parameters, such as the graph the user is seeing and the year in the title.</p>
+						<p class="bodyText">
+						
+						Several parameters are included in the visualizations. In the bar-graph, there is a sort button that sorts the life expectancy across various regions in ascending and descending order. In the multiline graph as the user hovers his mouse over the line charts, he/she can see the year and the life expectancy across the four income groups. In the vornoi diagram as the user hovers the mouse over a circle, he/she can see the country, the per capita GDP and life expectancy for that country. The size of the circle represents the per capita GDP dollar amount for a country. 
+						
+											
+						</p>
 						
 						<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Triggers</p>
-						<p class="bodyText">All the graphs have legends that are triggers as well. When the user clicks on the text or the colored box a section of the graph will be filtered. The parameter that is triggered is the one that controls what to show or not to show in the graph. Same thing happens with the brushing functionality that triggers a change in the scale parameter. On the animated slide, any change on the slider bar or the play button causes a change in the year parameter.</p>
+						<p class="bodyText">
+						
+					
+						There are several triggers that make the visualizations interactive and the user can play with the data by clicking on buttons, hovering over the line charts, bargraphs, vornoi diagrams. By selecting the values in the legends in the vornoi diagram, the viewer can filter the countries in that region and see the life expectancy of the countries of that region. By doing so the viewer can easily identify that the countries in African region have lower per capita GDP as well as lower life expectancy. </p>
+						
+						<p class="bodyText">
+						
+						User interface events are listed, along with a description of how possible user events are communicated to the viewer.
+						
+						</p>
+						
+										
 						
 						
-						<p style="font-size: 16px; font-weight: bold; color:#00aaff;">Cool things to notice</p>
-						<p class="bodyText">- The grid lines are automatically scale when using the brushing functionality.</br>- All the tooltips are automatically scale to fit the text.</br>- The legend&#39;s filters are gray-out when not shown in the graph.</br>- The play button has a nice push animation.</br>- Most of the graphs have a context graph so the user doesn&#39;t get lost when exploring.</p>
-						
-						
-						<p style="font-size: 16px; font-weight: bold; color:red;">Warning</p>
-						<p class="bodyText">This project is meant to be visualized on Chrome (recommended), Firefox, or Safari. It needs a screen with a resolution of at least 1255 X 584 pixels, if it is smaller than that then the user can see colliding objects.</p>
 					</div>
 				</div>
 				<div style="float: left; width: 50%;">
@@ -176,36 +182,31 @@
 					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">The Narrative Visualization</p>
 					
 					<p class="bodyText">					
-					This narrative visualization follows an interactive slideshow and is built with scenes, annotations, parameters, and triggers. 
+					Do wealthier countries live longer? - This narrative visualization follows an interactive slideshow and is built with scenes, annotations, parameters, and triggers. 
 					The scenes follow a uniform template for visual consistency and are ordered to best convey the message that there is some correlation between Income and Life Expectancy across years from 1960 to 2015. 
 					
-					This project was created based on the hybrid interactive slideshow ordering technique. Guidance is provided on each slide, but the users are free to drill down and list some details or investigate some tangent that they might be interested on or they can choose just to continue.
-					
-					The layout and any visual structure in these scenes. The annotations should follow a template for visual consistency, should highlight specific data items or trends, and the essay should indicate when they are cleared. 
-					
-					The parameters should be identified in the essay, which should also discuss the states of the narrative visualization. 
-					
-					The triggers should also be identified in the essay, in terms of the events and the parameter changes they trigger. 
-					
-					User interface events should be listed, along with a description of how possible user events are communicated to the viewer.
-					
+					Guidance is provided on each slide and viewer is able to explore the data through the visualizations.
 					
 					
 					
 					</p>
 					
-					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Scenes</p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Scenes in the Visualization</p>
 					
 					<p class="bodyText">
+					The narrative starts with a powerful world image and a question whether wealthier countries live longer. Following this, there are bar-graphs, multi-line charts and vornoi diagrams that explore the correlation between life expectancy across regions, across income groups and across GDP of a country respectively. 
 					
-					
-					This project was created as slides thanks to the awesome FullPage.js library in order to keep coherence and make it user-friendly. Each scene is a single chart with a specific goal related to the same subject and in a specific order to best convey the message. A double column layout is used in all the slides alternating the position of the text, this guarantees visual consistency. The same font is used throughout the project as well.
+					The layout and any visual structure in these scenes makes a viewer wonder the power of data visualization and explore further. 
 					
 					
 					</p>
 					
 					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Annotations</p>
-					<p class="bodyText">The first scene is used as an introductory slide to explain the “what” and “why” of the project. After that, each slide has two annotations, one that suggests a train of thinking that is used to draw a conclusion at the end (that governments must take seriously fertility rate and that religion is a possible cause of high fertility rate in some countries) and another one that is used to explain the users how to play with the data. There is also a title on each graph (the one that is animated changes automatically year by year), their legends, and their axis labels. All the annotations are cleared on each slide and are independent from each other. All of them use the same font for visual consistency. Each graph has tooltips when hovering over the data points.</p>
+					<p class="bodyText">
+					
+					The annotations follow a template for visual consistency and highlight specific data items or trends. At each visualization, there is a description indicating the annotations. The first scene has a bar-graph that shows the average life expectancy across regions of the world. After that each slide has annotations that guide the user to draw a conclusion and/or explore further in the data. 
+					
+					All annotations are cleared on each slide and are independent of each other. All of them use the same font for visual consistency. When the user hovers over his mouse over the graphs, the tool-tips help navigate the data in the visualization. </p>
 				</div>			
 			</div>
 		

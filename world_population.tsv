@@ -1,0 +1,243 @@
+id	name	population	
+CHN	China	1371220000	
+IND	India	1311050527	
+USA	United States	321418820	
+IDN	Indonesia	257563815	
+BRA	Brazil	207847528	
+PAK	Pakistan	188924874	
+BGD	Bangladesh	160995642	
+NGA	Nigeria	182201962	
+RUS	Russia	144096870	
+JPN	Japan	126958472	
+MEX	Mexico	127017224	
+PHL	Philippines	100699395	
+VNM	Vietnam	91713300	
+ETH	Ethiopia	99390750	
+DEU	Germany	81679769	
+EGY	Egypt	91508084	
+TUR	Turkey	78665830	
+COD	"Congo, Democratic Republic of the"	77266814	
+IRN	Iran	79109272	
+THA	Thailand	67959359	
+FRA	France	66538391	
+GBR	United Kingdom	65128861	
+ITA	Italy	60730582	
+MMR	Burma	53897154	
+ZAF	South Africa	55011976.68	
+KOR	"Korea, South"	50617045	
+UKR	Ukraine	45154029	
+COL	Colombia	48228704	
+SDN	Sudan	40234882	
+TZA	Tanzania	53470420	
+ARG	Argentina	43416755	
+ESP	Spain	46443994	
+KEN	Kenya	46050302	
+POL	Poland	37986412	
+DZA	Algeria	39666519	
+CAN	Canada	35848610	
+UGA	Uganda	39032383	
+MAR	Morocco	34377511	
+PER	Peru	31376670	
+IRQ	Iraq	36423395	
+SAU	Saudi Arabia	31540372	
+AFG	Afghanistan	32526562	
+NPL	Nepal	28513700	
+UZB	Uzbekistan	31298900	
+VEN	Venezuela	31108083	
+MYS	Malaysia	30331007	
+GHA	Ghana	27409893	
+YEM	Yemen	26832215	
+TWN	Taiwan	23024956	
+PRK	"Korea, North"	25155317	
+SYR	Syria	18502413	
+ROU	Romania	19815308	
+MOZ	Mozambique	27977863	
+AUS	Australia	23789752	
+LKA	Sri Lanka	20966000	
+MDG	Madagascar	24235390	
+CIV	Cote d'Ivoire	22701556	
+CMR	Cameroon	23344179	
+NLD	Netherlands	16939923	
+CHL	Chile	17948141	
+BFA	Burkina Faso	18105570	
+NER	Niger	19899120	
+KAZ	Kazakhstan	17544126	
+MWI	Malawi	17215232	
+ECU	Ecuador	16144363	
+KHM	Cambodia	15577899	
+SEN	Senegal	15129273	
+MLI	Mali	17599694	
+GTM	Guatemala	16342897	
+AGO	Angola	25021974	
+ZMB	Zambia	16211767	
+ZWE	Zimbabwe	15602751	
+CUB	Cuba	11389562	
+RWA	Rwanda	11609666	
+GRC	Greece	10820883	
+PRT	Portugal	10358076	
+TUN	Tunisia	11253554	
+TCD	Chad	14037472	
+BEL	Belgium	11249420	
+GIN	Guinea	12608590	
+CZE	Czech Republic	10546059	
+SOM	Somalia	10787104	
+BOL	Bolivia	10724705	
+HUN	Hungary	9843028	
+BDI	Burundi	11178921	
+DOM	Dominican Republic	10528391	
+BLR	Belarus	9489616	
+HTI	Haiti	10711067	
+SWE	Sweden	9799186	
+BEN	Benin	10879829	
+AZE	Azerbaijan	9649341	
+AUT	Austria	8638366	
+HND	Honduras	8075060	
+CHE	Switzerland	8281430	
+TJK	Tajikistan	8481855	
+ISR	Israel	8380100	
+SRB	Serbia	7095383	
+BGR	Bulgaria	7177991	
+HKG	Hong Kong	7305700	
+LAO	Laos	6802023	
+LBY	Libya	6278438	
+JOR	Jordan	7594547	
+PRY	Paraguay	6639123	
+TGO	Togo	7304578	
+PNG	Papua New Guinea	7619321	
+SLV	El Salvador	6126583	
+NIC	Nicaragua	6082032	
+ERI	Eritrea	0	
+DNK	Denmark	5683483	
+KGZ	Kyrgyzstan	5956900	
+SVK	Slovakia	5423801	
+FIN	Finland	5479531	
+SLE	Sierra Leone	6453184	
+ARE	United Arab Emirates	9156963	
+TKM	Turkmenistan	5373502	
+CAF	Central African Republic	4900274	
+SGP	Singapore	5535002	not listed
+NOR	Norway	5190239	
+BIH	Bosnia and Herzegovina	3810416	
+GEO	Georgia	3717100	
+CRI	Costa Rica	4807850	
+HRV	Croatia	4203604	
+MDA	Moldova	3554108	
+NZL	New Zealand	4595700	
+IRL	Ireland	4643740	
+COG	"Congo, Republic of the"	4620330	
+LBN	Lebanon	5850743	
+PRI	Puerto Rico	3474182	
+LBR	Liberia	4503438	
+ALB	Albania	2889167	
+LTU	Lithuania	2904910	
+URY	Uruguay	3431555	
+PAN	Panama	3929141	
+MRT	Mauritania	4067564	
+MNG	Mongolia	2959134	
+OMN	Oman	4490541	
+ARM	Armenia	3017712	
+JAM	Jamaica	2793335	
+KWT	Kuwait	3892115	
+PSE	West Bank	4422143	
+LVA	Latvia	1977527	
+NAM	Namibia	2458830	
+MKD	Macedonia	2078453	
+BWA	Botswana	2262485	
+SVN	Slovenia	2063531	
+LSO	Lesotho	2135022	
+GMB	"Gambia, The"	1990924	
+KWT	Kosovo	3892115	
+149	Gaza Strip	1604238	not listed
+GNB	Guinea-Bissau	1844325	
+GAB	Gabon	1725292	
+SWZ	Swaziland	1286970	
+153	Mauritius	1294104	not listed
+EST	Estonia	1314608	
+TTO	Trinidad and Tobago	1360088	
+TLS	Timor-Leste	1184765	
+CYP	Cyprus	1165300	
+FJI	Fiji	892145	
+QAT	Qatar	2235355	
+160	Comoros	773407	not listed
+GUY	Guyana	767085	
+DJI	Djibouti	887861	
+163	Bahrain	738004	not listed
+BTN	Bhutan	774830	
+MNE	Montenegro	622159	
+GNQ	Equatorial Guinea	845060	
+SLB	Solomon Islands	583591	
+168	Macau	567957	not listed
+169	Cape Verde	508659	not listed
+LUX	Luxembourg	569604	
+ESH	Western Sahara	491519	
+SUR	Suriname	542975	
+173	Malta	406771	not listed
+174	Maldives	395650	not listed
+BRN	Brunei	423188	
+BLZ	Belize	359287	
+BHS	"Bahamas, The"	388019	
+ISL	Iceland	330815	
+179	French Polynesia	291000	not listed
+180	Barbados	285653	not listed
+181	Mayotte	231139	not listed
+NCL	New Caledonia	273000	
+183	Netherlands Antilles	228693	not listed
+VUT	Vanuatu	264652	
+185	Samoa	192001	not listed
+186	Sao Tome and Principe	175808	not listed
+187	Saint Lucia	160922	not listed
+188	Tonga	122580	not listed
+189	Virgin Islands	109775	not listed
+190	Grenada	107818	not listed
+191	"Micronesia, Federated States of"	107154	not listed
+192	Aruba	104589	not listed
+193	Saint Vincent and the Grenadines	104217	not listed
+194	Kiribati	99482	not listed
+195	Jersey	91812	not listed
+196	Seychelles	88340	not listed
+197	Antigua and Barbuda	86754	not listed
+198	Andorra	84525	not listed
+199	Isle of Man	76913	not listed
+DOM	Dominica	10528391	
+201	Bermuda	68268	not listed
+202	American Samoa	66432	not listed
+203	Marshall Islands	65859	not listed
+204	Guernsey	65632	not listed
+GRL	Greenland	56114	
+206	Cayman Islands	50209	not listed
+207	Saint Kitts and Nevis	49898	not listed
+208	Faroe Islands	49057	not listed
+209	Northern Mariana Islands	48317	not listed
+210	Liechtenstein	35002	not listed
+211	San Marino	31477	not listed
+212	Monaco	30586	not listed
+213	Saint Martin	30235	not listed
+214	Gibraltar	28877	not listed
+215	British Virgin Islands	24939	not listed
+216	Turks and Caicos Islands	23528	not listed
+217	Palau	20879	not listed
+218	Akrotiri	15700	not listed
+219	Dhekelia	15700	not listed
+220	Wallis and Futuna	15343	not listed
+221	Anguilla	14764	not listed
+222	Nauru	14264	not listed
+223	Cook Islands	11488	not listed
+224	Tuvalu	10472	not listed
+225	"Saint Helena, Ascension, and Tristan da Cunha"	7670	not listed
+226	Saint Barthelemy	7406	not listed
+227	Saint Pierre and Miquelon	6010	not listed
+228	Montserrat	5118	not listed
+FLK	Falkland Islands (Islas Malvinas)	3140	
+230	Norfolk Island	2155	not listed
+231	Svalbard	2067	not listed
+232	Christmas Island	1402	not listed
+233	Tokelau	1400	not listed
+234	Niue	1354	not listed
+235	Holy See (Vatican City)	829	not listed
+236	Cocos (Keeling) Islands	596	not listed
+237	Pitcairn Islands	48	not listed
+ATA	Antarctica	0	
+ATF	French Southern and Antarctic Lands	0	
+SDS	South Sudan	12152321	
+ABV	Somaliland	3500000	
+OSA	Kosovo	1824000	
