@@ -1,0 +1,180 @@
+Country	CountryCode	Region	Continent	GDP	GDP_perCapita	lifeExpectancy
+Afghanistan	AFG	Asia | South & West	Asia	15936784437	594.32	60.7172
+Albania	ALB	Europe | South & East	Europe	11926957255	3945.22	78.0145
+Algeria	DZA	Africa | North & East	Africa	1.61207E+11	4154.12	75.0425
+Angola	AGO	Africa | South & West	Africa	82470894868	4101.47	52.6661
+Antigua and Barbuda	ATG	America | North & Central	Americas	1135539037	13714.73	76.1002
+Argentina	ARG	America | South	Americas	4.62704E+11	13467.42	76.3342
+Armenia	ARM	Asia | South & West	Asia	9260287416	3489.13	74.7971
+Aruba	ABW	America | North & Central	Americas	2467703911	0	75.5736
+Australia	AUS	Oceania	Oceania	1.14127E+12	56290.65	82.4512
+Austria	AUT	Europe | North & West	Europe	3.89656E+11	43636.75	81.8439
+Azerbaijan	AZE	Asia | South & West	Asia	52902703376	5497.49	70.8488
+"Bahamas, The"	BHS	America | North & Central	Americas	7910000000	22817.23	75.3968
+Bahrain	BHR	Asia | South & West	Asia	25713544825	22600.21	76.8191
+Bangladesh	BGD	Asia | South & West	Asia	1.15279E+11	1211.7	72.0012
+Barbados	BRB	America | North & Central	Americas	4433700000	15429.34	75.6584
+Belarus	BLR	Europe | South & East	Europe	55220932614	5754.6	73.6244
+Belgium	BEL	Europe | North & West	Europe	4.84404E+11	40454.17	81.2878
+Belize	BLZ	America | North & Central	Americas	1397113450	4878.72	70.1924
+Benin	BEN	Africa | South & West	Africa	6561782313	762.05	59.7207
+Bermuda	BMU	America | North & Central	Americas	5744414000	0	81.0122
+Bhutan	BTN	Asia | South & West	Asia	1585396256	2656	69.8329
+Bolivia	BOL	America | South	Americas	19649631308	3076.79	68.7396
+Bosnia and Herzegovina	BIH	Europe | South & East	Europe	16847493059	4249.33	76.5886
+Botswana	BWA	Africa | South & West	Africa	13746712711	6360.14	64.4874
+Brazil	BRA	America | South	Americas	2.14307E+12	8677.77	74.6759
+Brunei Darussalam	BRN	Asia | East & Central	Asia	12369708859	30554.73	79.0408
+Bulgaria	BGR	Europe | South & East	Europe	48669060512	6993.48	74.4659
+Burkina Faso	BFA	Africa | South & West	Africa	8992678844	589.77	58.9313
+Burundi	BDI	Africa | North & East	Africa	2026864414	277.07	57.107
+Cabo Verde	CPV	Africa | South & West	Africa	1664310633	3080.18	73.3556
+Cambodia	KHM	Asia | East & Central	Asia	11242266334	1158.69	68.6561
+Cameroon	CMR	Africa | South & West	Africa	23622482955	1217.26	55.9344
+Canada	CAN	America | North & Central	Americas	1.61407E+12	43315.7	82.1376
+Central African Republic	CAF	Africa | South & West	Africa	1986014759	323.2	51.4191
+Chad	TCD	Africa | South & West	Africa	10657705537	775.7	51.8733
+Chile	CHL	America | South	Americas	2.17502E+11	13416.23	81.7876
+China	CHN	Asia | East & Central	Asia	5.9305E+12	8069.21	75.9863
+Colombia	COL	America | South	Americas	2.87018E+11	6056.15	74.182
+Comoros	COM	Africa | North & East	Africa	516962949.5	717.45	63.554
+"Congo, Rep."	COG	Africa | South & West	Africa	12007880067	1851.2	62.8677
+Costa Rica	CRI	America | North & Central	Americas	36298327670	11260.09	79.5865
+Cote d'Ivoire	CIV	Africa | South & West	Africa	24884503951	1398.99	51.9198
+Croatia	HRV	Europe | South & East	Europe	59643818182	11592.91	77.2756
+Cuba	CUB	America | North & Central	Americas	64328220000	7650.23	79.5464
+Cyprus	CYP	Asia | South & West	Asia	23132450331	23075.11	80.3071
+Czech Republic	CZE	Europe | South & East	Europe	2.07016E+11	17556.92	79.4732
+Denmark	DNK	Europe | North & West	Europe	3.19812E+11	53014.64	81.1
+Djibouti	DJI	Africa | North & East	Africa	1128611700	1945.12	62.2857
+Dominican Republic	DOM	America | North & Central	Americas	53042943731	6468.47	73.6767
+Ecuador	ECU	America | South	Americas	69555367000	6205.06	76.1029
+"Egypt, Arab Rep."	EGY	Africa | North & East	Africa	2.18888E+11	3614.75	71.317
+El Salvador	SLV	America | North & Central	Americas	21418300000	4219.35	73.0011
+Equatorial Guinea	GNQ	Africa | South & West	Africa	11582917790	14439.59	57.9634
+Eritrea	ERI	Africa | North & East	Africa	2117039511	0	64.1009
+Estonia	EST	Europe | North & West	Europe	19479012423	17084.52	77.1317
+Ethiopia	ETH	Africa | North & East	Africa	29933790334	619.17	64.578
+Fiji	FJI	Oceania	Oceania	3140508836	4960.52	70.2563
+Finland	FIN	Europe | North & West	Europe	2.478E+11	42403.47	81.3854
+France	FRA	Europe | North & West	Europe	2.64684E+12	36352.48	82.6707
+Gabon	GAB	Africa | South & West	Africa	14569527125	8266.45	64.8903
+"Gambia, The"	GMB	Africa | South & West	Africa	951827284.9	471.54	60.4677
+Georgia	GEO	Asia | South & West	Asia	11638536834	3757.06	74.8174
+Germany	DEU	Europe | North & West	Europe	3.41201E+12	41178.46	81.0902
+Ghana	GHA	Africa | South & West	Africa	32174839713	1369.7	61.4917
+Greece	GRC	Europe | South & East	Europe	2.99598E+11	18006.97	81.5878
+Grenada	GRD	America | North & Central	Americas	771015875.3	9212.02	73.523
+Guatemala	GTM	America | North & Central	Americas	41337958252	3903.48	71.9565
+Guinea	GIN	Africa | South & West	Africa	4735956476	531.32	59.1934
+Guinea-Bissau	GNB	Africa | South & West	Africa	847491366.9	572.99	55.4673
+Guyana	GUY	America | South	Americas	2259288396	4127.35	66.5075
+Haiti	HTI	America | North & Central	Americas	6622541529	818.34	63.0738
+Honduras	HND	America | North & Central	Americas	15839344592	2528.89	73.3331
+"Hong Kong SAR, China"	HKG	Asia | East & Central	Asia	2.28638E+11	42327.84	84.278
+Hungary	HUN	Europe | South & East	Europe	1.29586E+11	12365.63	75.961
+Iceland	ISL	Europe | North & West	Europe	13261035517	50722	82.861
+India	IND	Asia | South & West	Asia	1.70846E+12	1593.26	68.3486
+Indonesia	IDN	Asia | East & Central	Asia	7.09191E+11	3346.49	69.0717
+"Iran, Islamic Rep."	IRN	Asia | South & West	Asia	4.22568E+11	0	75.5913
+Iraq	IRQ	Asia | South & West	Asia	1.38517E+11	4943.76	69.5903
+Ireland	IRL	Europe | North & West	Europe	2.18435E+11	61093.69	81.5024
+Israel	ISR	Asia | South & West	Asia	2.32908E+11	35729.37	82.0512
+Italy	ITA	Europe | South & East	Europe	2.12662E+12	29993.08	83.4902
+Jamaica	JAM	America | North & Central	Americas	13230844040	5105.79	75.7982
+Japan	JPN	Asia | East & Central	Asia	5.49539E+12	34523.7	83.8437
+Jordan	JOR	Asia | South & West	Asia	26425379437	4940.05	74.2033
+Kazakhstan	KAZ	Asia | East & Central	Asia	1.48047E+11	10509.98	72
+Kenya	KEN	Africa | North & East	Africa	40000138831	1376.71	62.1337
+Kiribati	KIR	Oceania	Oceania	150431113.6	1424.28	66.1479
+"Korea, Rep."	KOR	Asia | East & Central	Asia	1.0945E+12	27221.52	82.1559
+Kuwait	KWT	Asia | South & West	Asia	1.15429E+11	29300.58	74.6979
+Kyrgyz Republic	KGZ	Asia | East & Central	Asia	4794357795	1103.23	70.6512
+Lao PDR	LAO	Asia | East & Central	Asia	7181441152	1818.44	66.5399
+Latvia	LVA	Europe | North & West	Europe	24009680460	13654.85	74.1244
+Lebanon	LBN	Asia | South & West	Asia	38009950249	8047.65	79.6286
+Lesotho	LSO	Africa | South & West	Africa	2175692207	1066.99	49.9612
+Liberia	LBR	Africa | South & West	Africa	1292696476	455.87	61.161
+Libya	LBY	Africa | North & East	Africa	74755288917	0	71.8263
+Lithuania	LTU	Europe | North & West	Europe	36709511568	14251.78	75.1195
+Luxembourg	LUX	Europe | North & West	Europe	52143650383	99717.74	82.2293
+"Macao SAR, China"	MAC	Asia | East & Central	Asia	28359706123	78585.88	80.7661
+"Macedonia, FYR"	MKD	Europe | South & East	Europe	9338674078	4852.66	75.4953
+Madagascar	MDG	Africa | North & East	Africa	8729936136	401.84	65.4828
+Malawi	MWI	Africa | North & East	Africa	5398616985	371.99	63.7969
+Malaysia	MYS	Asia | East & Central	Asia	2.47534E+11	9768.33	74.8752
+Maldives	MDV	Asia | South & West	Asia	2134104884	8395.79	76.979
+Mali	MLI	Africa | South & West	Africa	9422267260	724.26	58.4572
+Malta	MLT	Europe | South & East	Europe	8163841060	22567.88	81.9463
+Mauritania	MRT	Africa | South & West	Africa	3526947609	0	63.2028
+Mauritius	MUS	Africa | North & East	Africa	9718233911	9252.11	74.3532
+Mexico	MEX	America | North & Central	Americas	1.05163E+12	9005.02	76.9207
+"Micronesia, Fed. Sts."	FSM	Oceania	Oceania	294117200	3015.23	69.2342
+Moldova	MDA	Europe | South & East	Europe	5811604052	1848.08	71.6264
+Mongolia	MNG	Asia | East & Central	Asia	6200357070	3967.83	69.8213
+Montenegro	MNE	Europe | South & East	Europe	4114881347	6408.43	76.3377
+Morocco	MAR	Africa | North & East	Africa	90770671432	2878.2	74.2893
+Mozambique	MOZ	Africa | North & East	Africa	10165353591	529.24	55.3712
+Namibia	NAM	Africa | South & West	Africa	11281996426	4673.57	64.9154
+Nepal	NPL	Asia | South & West	Asia	15994094607	743.32	69.9733
+Netherlands	NLD	Europe | North & West	Europe	8.3639E+11	44290.87	81.7073
+New Zealand	NZL	Oceania	Oceania	1.43467E+11	37807.97	81.4568
+Nicaragua	NIC	America | North & Central	Americas	8938209651	2086.9	75.0981
+Niger	NER	Africa | South & West	Africa	5718589550	358.96	61.969
+Nigeria	NGA	Africa | South & West	Africa	3.69062E+11	2671.72	53.0489
+Norway	NOR	Europe | North & West	Europe	4.20946E+11	74481.82	82.1
+Oman	OMN	Asia | South & West	Asia	58641352878	15550.68	77.3242
+Pakistan	PAK	Asia | South & West	Asia	1.77166E+11	1434.7	66.377
+Panama	PAN	America | North & Central	Americas	28814100000	13268.11	77.7673
+Papua New Guinea	PNG	Oceania	Oceania	9717175432	0	62.7767
+Paraguay	PRY	America | South	Americas	20030529733	4080.95	73.0256
+Peru	PER	America | South	Americas	1.48523E+11	6027.13	74.7807
+Philippines	PHL	Asia | East & Central	Asia	1.99589E+11	2904.2	68.4068
+Poland	POL	Europe | South & East	Europe	4.76688E+11	12558.87	78.2049
+Portugal	PRT	Europe | South & East	Europe	2.38303E+11	19222.94	81.522
+Qatar	QAT	Asia | South & West	Asia	1.25122E+11	73653.39	78.7626
+Russian Federation	RUS	Europe | South & East	Europe	1.52492E+12	9329.3	70.9085
+Rwanda	RWA	Africa | North & East	Africa	5698548923	697.35	64.5245
+Samoa	WSM	Oceania	Oceania	643059403	3938.55	73.7649
+Sao Tome and Principe	STP	Africa | South & West	Africa	201037916.6	1669.06	66.5137
+Saudi Arabia	SAU	Asia | South & West	Asia	5.26811E+11	20481.75	74.4933
+Senegal	SEN	Africa | South & West	Africa	12932427724	899.58	66.8044
+Serbia	SRB	Europe | South & East	Europe	39368633038	5237.26	75.4878
+Seychelles	SYC	Africa | North & East	Africa	973360306.5	15390.04	73.2293
+Sierra Leone	SLE	Africa | South & West	Africa	2578159496	653.13	51.3082
+Singapore	SGP	Asia | East & Central	Asia	2.3642E+11	52888.74	82.5951
+Slovak Republic	SVK	Europe | South & East	Europe	89011919205	16089.02	77.2122
+Slovenia	SVN	Europe | South & East	Europe	47972988742	20728.92	81.078
+Solomon Islands	SLB	Oceania	Oceania	681587104.8	1934.86	68.1462
+South Africa	ZAF	Africa | South & West	Africa	3.75349E+11	5718.24	57.4409
+Spain	ESP	Europe | South & East	Europe	1.43159E+12	25684.72	83.3805
+Sri Lanka	LKA	Asia | South & West	Asia	49567521670	3926.17	74.9532
+St. Lucia	LCA	America | North & Central	Americas	1244297407	7735.91	75.1845
+St. Vincent and the Grenadines	VCT	America | North & Central	Americas	681225963	6739.17	73.0524
+Sudan	SDN	Africa | North & East	Africa	65632081240	2414.72	63.7107
+Suriname	SUR	America | South	Americas	4368398048	9485.32	71.2942
+Swaziland	SWZ	Africa | South & West	Africa	3891575152	3200.14	48.874
+Sweden	SWE	Europe | North & West	Europe	4.88378E+11	50585.26	82.5512
+Switzerland	CHE	Europe | North & West	Europe	5.81209E+11	80999.29	83.1976
+Tajikistan	TJK	Asia | East & Central	Asia	5642178580	925.91	69.7684
+Tanzania	TZA	Africa | North & East	Africa	30917376837	878.98	65.4875
+Thailand	THA	Asia | East & Central	Asia	3.18908E+11	5814.77	74.6012
+Togo	TGO	Africa | South & West	Africa	3172945506	559.64	60.1208
+Tonga	TON	Oceania	Oceania	369212477.5	4098.54	72.944
+Trinidad and Tobago	TTO	America | North & Central	Americas	20758191858	17321.88	70.5577
+Tunisia	TUN	Africa | North & East	Africa	44426016487	3822.36	74.976
+Turkey	TUR	Asia | South & West	Asia	7.31168E+11	9125.69	75.4262
+Turkmenistan	TKM	Asia | East & Central	Asia	22148070175	6672.48	65.7364
+Uganda	UGA	Africa | North & East	Africa	18803852466	705.29	59.1791
+Ukraine	UKR	Europe | South & East	Europe	1.36419E+11	2114.95	71.1895
+United Arab Emirates	ARE	Asia | South & West	Asia	2.86049E+11	40438.76	77.5412
+United Kingdom	GBR	Europe | North & West	Europe	2.40793E+12	43929.69	81.6049
+United States	USA	America | North & Central	Americas	1.49644E+13	56115.72	78.7415
+Uruguay	URY	America | South	Americas	38881102100	15573.9	77.1382
+Uzbekistan	UZB	Asia | East & Central	Asia	39332770929	2132.11	68.4531
+Vanuatu	VUT	Oceania	Oceania	700804286.2	2805.31	72.1574
+"Venezuela, RB"	VEN	America | South	Americas	3.93802E+11	0	74.4096
+Vietnam	VNM	Asia | East & Central	Asia	1.15932E+11	2110.92	75.7777
+"Yemen, Rep."	YEM	Asia | South & West	Asia	31743751169	1406.29	64.0314
+Zambia	ZMB	Africa | North & East	Africa	20265396326	1304.88	60.7857
+Zimbabwe	ZWE	Africa | North & East	Africa	9456808200	924.14	59.1611

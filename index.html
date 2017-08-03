@@ -1,307 +1,292 @@
 <!DOCTYPE html>
-<html lang="en">
-<style>
-.chart rect { fill: steelblue; }
-#tooltip {
-    opacity: 0;
-    position: absolute;
-    text-align: center;
-    width: 60px; height: 40px;
-    background: white;
-    border: 0px;
-    pointer-events: none;
-	
-}
-</style>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<meta charset="UTF-8">
+		
+		
+		
+		<link rel="stylesheet" href="style.css">
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
+		<script  type="text/javascript" src="d3.min.js"></script>
+		
 
+		<!-- jQuery -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="jquery-1.11.3.js"></script>
 
-<head>
-	<meta charset="UTF-8">
-	<title>CS498 Project</title>
-	<link rel="stylesheet" href="main.css">
-	<script  type="text/javascript" src="d3.min.js"></script>
-</head>
-<body>
-<!--Place all DOM elements here -->
-<p> Life Expectancy for all regions of the world!!</p>
-
-<div id="tooltip"></div>
-<svg id="viz1"></svg>
-
-
-<script>
-var data = [
-	{key: "East Asia & Pacific",		value: 75.1},
-	{key: "Europe & Central Asia",		value: 77.2},
-	{key: "Latin America & Caribbean",		value: 75.1},
-	{key: "Middle East & North Africa",	value: 73},
-	{key: "North America",		value: 79},
-	{key: "South Asia",	value: 68.4},
-	{key: "Sub-Saharan Africa", 	value: 58.9}
-];
-var w = 800;
-var h = 450;
-var margin = {
-	top: 58,
-	bottom: 120,
-	left: 80,
-	right: 40
-};
-var width = w - margin.left - margin.right;
-var height = h - margin.top - margin.bottom;
-
-var x = d3.scale.ordinal()
-		.domain(data.map(function(entry){
-			return entry.key;
-		}))
-		.rangeBands([0, width]);
-var y = d3.scale.linear()
-		.domain([0, d3.max(data, function(d){
-			return d.value;
-		})])
-		.range([height, 0]);
-var ordinalColorScale = d3.scale.category20();
-var xAxis = d3.svg.axis()
-			.scale(x)
-			.orient("bottom");
-var yAxis = d3.svg.axis()
-			.scale(y)
-			.orient("left");
-var yGridlines = d3.svg.axis()
-				.scale(y)
-				.tickSize(-width,0,0)
-				.tickFormat("")
-				.orient("left");
-var svg = d3.select("body").append("svg")
-			.attr("id", "chart")
-			.attr("width", w)
-			.attr("height", h);
-var chart = svg.append("g")
-			.classed("display", true)
-			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-var controls = d3.select("body")
-				.append("div")
-				.attr("id", "controls");
-var sort_btn = controls.append("button")
-				.html("Sort data: ascending")
-				.attr("state", 0);
-				
-var tooltip = d3.select("#tooltip");
-
-function drawAxis(params){
-
-	if(params.initialize === true){
-		//Draw the gridlines and axes
-		//Draw the gridlines
-		this.append("g")
-			.call(params.gridlines)
-			.classed("gridline", true)
-			.attr("transform", "translate(0,0)")
-
-		//This is the x axis
-		this.append("g")
-			.classed("x axis", true)
-			.attr("transform", "translate(" + 0 + "," + height + ")")
-			.call(params.axis.x)
-				.selectAll("text")
-					.classed("x-axis-label", true)
-					.style("text-anchor", "end")
-					.style("font-size","12px")
-					.attr("dx", -8)
-					.attr("dy", 8)
-					.attr("transform", "translate(0,0) rotate(-45)");
-
-		//This is the y axis
-		this.append("g")
-			.classed("y axis", true)
-			.attr("transform", "translate(0,0)")
-			.call(params.axis.y);
-
-		//This is the y label
-		this.select(".y.axis")
-			.append("text")
-			.attr("x", 0)
-			.attr("y", 0)
-			.style("text-anchor", "middle")
-			.style("font-size","30px")
-			.attr("transform", "translate(-50," + height/2 + ") rotate(-90)")
-			.text("Life Expectancy in Years");
-
-		//This is the x label
-		this.select(".x.axis")
-			.append("text")
-			.attr("x", 20)
-			.attr("y", 10)
-			.style("text-anchor", "right")
-			.style("font-size","30px")
-			.attr("transform", "translate(" + width/2 + ",80)")
-			.text("Region");
-
-	} else if(params.initialize === false){
-		//Update info
-		this.selectAll("g.x.axis")
-			.transition()
-			.duration(500)
-			.ease("bounce")
-			.delay(500)
-			.call(params.axis.x);
-		this.selectAll(".x-axis-label")
-			.style("text-anchor", "end")
-			.style("font-size","12px")
-			.attr("dx", -8)
-			.attr("dy", 8)
-			.attr("transform", "translate(0,0) rotate(-45)");
-		this.selectAll("g.y.axis")
-			.transition()
-			.duration(500)
-			.ease("bounce")
-			.delay(500)
-			.call(params.axis.y);
-	}
-}
-function plot(params){
-	x.domain(data.map(function(entry){
-			return entry.key;
-		}));
-	y.domain([0, d3.max(data, function(d){
-			return d.value;
-		})]);
-
-	//Draw the axes and axes labels
-	drawAxis.call(this, params);
-
-	//enter()
-	this.selectAll(".bar")
-		.data(params.data)
-		.enter()
-			.append("rect")
-			.classed("bar", true)
-			.on("mouseover", function(d,i){
-				d3.select(this).style("fill", "yellow")
-				tooltip.style("opacity", 1)
-               .style("left",(d3.event.pageX)+"px")
-               .style("top",(d3.event.pageY)+"px")
-               .style("background","white")
-               .style("width","auto")
-               .style("height","auto")
-               .style("padding","10px")
-               .html("Average Life Expectancy of "+d.key+" is "+d.value);
-						
-				
-			})
-			
-			
-			
-			.on("mousemove", function(d,i){
-
-			})
-			.on("mouseout", function(d,i){
-				d3.select(this).style("fill", ordinalColorScale(i))
-								tooltip.style("opacity", 0);
-				
-				
-							
-			
+		<script src="jquery.fullPage.min.js"></script>
+		<link rel="stylesheet" href="jquery.fullPage.css">
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		
+		<link href="https://fonts.googleapis.com/css?family=Raleway|Oxigen|Open+Sans" rel="stylesheet">
+		<!-- Open Sans & CSS -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet' type='text/css'>
+		
+		
+		
+		
+		<style>
+		
+		
+		</style>
+		
+		
+		
+	</head>
+	<body>
+		<div id="wrapper">
+		
+			<div class="section" id="sectionImage1" style="width:100%; height:100%; padding-left:3%; padding-right:1.5%;">
+				<div style="float: left; width: 47%;">
+					<div style="font-size: 40px; font-weight: bold; color:#1a1a1a;">On an average, do wealthier countries live longer?<br/></div>
+					<p style="font-size: 25px; -webkit-margin-before: 0.2em; -webkit-margin-after: 0.2em; color:#404040;">Economic Growth and Life Expectancy </p><br/>
+					<div class="bodyText"><div style="font-size: 16px; font-weight: bold; color:#1a1a1a;"> Relation between Income and Life Expectancy</div></br>
+					This project explores the connection between per capita GDP and life expectancy through various interactive visualizations. By interacting with the visualizations the viewer can draw his/her own inferences.</br></br>
 					
-				   
+					<div style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Comparison of Life Expectancy Across Regions </div></br>
+					We will compare Average Life Expectancy across Regions through an interactive Bar-graph.
+					
+					<div style="font-size: 16px; font-weight: bold; color:#1a1a1a;"></br>GDP vs Life Expectancy</div></br>
+					By using a scatterplot and a vornoi diagram, we will see when we hover over an circle, what is the country name, what is the life expectancy and what is the per capita GDP.
+					</br></br>
+					
+					<div style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Income Groups</div></br>
+					We will see the life expectancy changes across income groups. </br></br>
+					
+					<div style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Visualize and Draw Inferences</div></br>
+					
+					Over the next few slides we will have the opportunity to explore the data and interact with the visualizations.</div>
+				</div>
+			</div>
+			
+			
+			<div class="section" style="width:100%; height:100%; padding-left:3%; padding-right:1%;">
+				<div style="float: right; width: 70%; text-align: center;">
+					<div style="padding-right: 140px; font-size: 20px; font-weight: bold;">Average Life Expectancy Across Regions<br/></div>
+					
+					<div id="tooltip"></div>
+					<svg id="barchart1" width="800" height="500"></svg>
+					<div id="controls"></div>	
+				
+					
+				</div>
+				<div style="float: left; width: 30%;">
+					<p style="font-size: 40px; font-weight: bold; color:#1a1a1a;">Does Life Expectancy vary between Regions?<br/></p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Bar-graph of life expectancy</p>
+					<p class="bodyText">Life Expectancy is clearly different between different regions.</p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Interact with Bar-graph and Button</p>
+					<p class="bodyText">Click on the Sort button to view life expectancy of Regions in ascending or descending order. Hover your mouse over the bars to view the tooltip on Regions and Average Life Expectancy.</p>
+				</div>			
+			</div>
+			
+			
+			<div class="section" style="width:100%; height:100%; padding-left:2.5%; padding-right:7%;">
+			
+				<div style="float: left; width: 70%;">
+				
+				
+					<div style="padding-left: 140px; font-size: 20px; font-weight: bold;">Scatterplot with <span id="title">Voronoi</span><br/><br/></div>
+					
+					<div id="cont" class="container-fluid text-center">
+						<div class="row scatter">
+							<h5 style="color: #3B3B3B;">Life expectancy versus GDP per Capita</h5>
+							<h6 style="color: #A6A6A6;">Voronoi clipped circles </h6>
+							<div class="col-sm-9">
+								<div id="chart"></div>
+							</div>
+							<div id = "legend" class="col-sm-3" style="padding-right: 0px; padding-left: 0px;">
+								<div class="legendTitle" style="font-size: 12px;">REGION</div>
+								<div id="legend"></div>
+							</div>
+						</div>
+					</div>
+
+				
+					
+					
+				</div>
+				<div style="float: right; width: 30%;">
+					<p style="font-size: 45px; font-weight: bold; color:#1a1a1a;">Life Expectancy vs GDP<br/></p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Life Expectancy vs GDP in 2010 </p>
+					<p class="bodyText">
+					We dive deeper into the relation between Life Expectancy and GDP by observing the scatterplot and infer that with the per capita GDP increased in various countries, life expectancy increased across various countries and regions of the world in 2010. 
+					
+					It looks like there is a correlation between these two elements, year by year GDP per capita grows and Life Expectancy increases. Clearly if you hover your mouse over the Regions in Africa, the countries there have a low life expectancy and low GDP. Viewer can draw his own inferences based on this scatterplot. 
+					
+					</p>
+					
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Interact with the Scatter Plot</p>
+					<p class="bodyText">Hover your mouse over the circles to view the country&#39;s life expectancy in years on y-axis and per capita GDP on x-axis. The size of the circles is proportional to GDP per capita to remark the difference in the graph. The Regions and countries within that region are shown in the legend. Hover your mouse over regions in the legend to view the countries in that region.</p>
+				</div>
+			</div>
+		
+
+			<div class="section" style="width:100%; height:100%; padding-left:3%; padding-right:1%;">
+				<div style="float: right; width: 70%; text-align: center;">
+					<div style="padding-right: 140px; font-size: 20px; font-weight: bold;">Life Expectancy across Income Groups from 1960 to 2015<br/></div>
+					
+					<div class="chart-wrapper" id="chart-line1"width="800" height="500"></div>
+
+									
+					
+				</div>
+				<div style="float: left; width: 30%;">
+					<p style="font-size: 45px; font-weight: bold; color:#1a1a1a;">Income Groups<br/></p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Life Expectancy Across Income Groups</p>
+					<p class="bodyText">The data is clustered into four income groups as per the dataset – High Income, Upper Middle Income, Lower Middle Income and Low Income. We can observe that there is a significant difference in life expectancy across income groups across all years from 1960 to 2015. As both the Independent and Dependent Variables in this case are Quantitative Continuous, I have taken the line chart to represent the improvement in life expectancy over the years. </p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Interact with Income Groups</p>
+					<p class="bodyText">Hover over your mouse over the multi-line chart from left to right and vice versa and observe the life expectancy across the four income groups in the tooltip. Use each point&#39;s tooltip to get detailed information, just hover over the points in the graph.</p>
+				</div>	
+			</div>
+		
+
+			<div class="section" style="width:100%; height:100%; padding-left:3%; padding-right:7%;">
+				<div style="float: right; width: 50%;">
+					<div style="padding-left:6%;">
+						<p style="font-size: 15px; font-weight: bold; color:#1a1a1a;">&nbsp;</p>					
+						
+						<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Parameters</p>
+						<p class="bodyText">There are several useful parameters included all over the project. There is an intuitive and dynamic side bar which allows the user to navigate to any slide. If the user hovers over the circles a text will be displayed with the name of the scene. A thick circle is used to represent the current state/slide of the narrative visualization. On the animated slide, there is a button and a slider which control a set of parameters, such as the graph the user is seeing and the year in the title.</p>
+						
+						<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Triggers</p>
+						<p class="bodyText">All the graphs have legends that are triggers as well. When the user clicks on the text or the colored box a section of the graph will be filtered. The parameter that is triggered is the one that controls what to show or not to show in the graph. Same thing happens with the brushing functionality that triggers a change in the scale parameter. On the animated slide, any change on the slider bar or the play button causes a change in the year parameter.</p>
+						
+						
+						<p style="font-size: 16px; font-weight: bold; color:#00aaff;">Cool things to notice</p>
+						<p class="bodyText">- The grid lines are automatically scale when using the brushing functionality.</br>- All the tooltips are automatically scale to fit the text.</br>- The legend&#39;s filters are gray-out when not shown in the graph.</br>- The play button has a nice push animation.</br>- Most of the graphs have a context graph so the user doesn&#39;t get lost when exploring.</p>
+						
+						
+						<p style="font-size: 16px; font-weight: bold; color:red;">Warning</p>
+						<p class="bodyText">This project is meant to be visualized on Chrome (recommended), Firefox, or Safari. It needs a screen with a resolution of at least 1255 X 584 pixels, if it is smaller than that then the user can see colliding objects.</p>
+					</div>
+				</div>
+				<div style="float: left; width: 50%;">
+					<p style="font-size: 40px; font-weight: bold; color:#1a1a1a;">About the visualization<br/></p>
+					
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">The Narrative Visualization</p>
+					
+					<p class="bodyText">					
+					This narrative visualization follows an interactive slideshow and is built with scenes, annotations, parameters, and triggers. 
+					The scenes follow a uniform template for visual consistency and are ordered to best convey the message that there is some correlation between Income and Life Expectancy across years from 1960 to 2015. 
+					
+					This project was created based on the hybrid interactive slideshow ordering technique. Guidance is provided on each slide, but the users are free to drill down and list some details or investigate some tangent that they might be interested on or they can choose just to continue.
+					
+					The layout and any visual structure in these scenes. The annotations should follow a template for visual consistency, should highlight specific data items or trends, and the essay should indicate when they are cleared. 
+					
+					The parameters should be identified in the essay, which should also discuss the states of the narrative visualization. 
+					
+					The triggers should also be identified in the essay, in terms of the events and the parameter changes they trigger. 
+					
+					User interface events should be listed, along with a description of how possible user events are communicated to the viewer.
+					
+					
+					
+					
+					</p>
+					
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Scenes</p>
+					
+					<p class="bodyText">
+					
+					
+					This project was created as slides thanks to the awesome FullPage.js library in order to keep coherence and make it user-friendly. Each scene is a single chart with a specific goal related to the same subject and in a specific order to best convey the message. A double column layout is used in all the slides alternating the position of the text, this guarantees visual consistency. The same font is used throughout the project as well.
+					
+					
+					</p>
+					
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Annotations</p>
+					<p class="bodyText">The first scene is used as an introductory slide to explain the “what” and “why” of the project. After that, each slide has two annotations, one that suggests a train of thinking that is used to draw a conclusion at the end (that governments must take seriously fertility rate and that religion is a possible cause of high fertility rate in some countries) and another one that is used to explain the users how to play with the data. There is also a title on each graph (the one that is animated changes automatically year by year), their legends, and their axis labels. All the annotations are cleared on each slide and are independent from each other. All of them use the same font for visual consistency. Each graph has tooltips when hovering over the data points.</p>
+				</div>			
+			</div>
+		
+
+			<div class="section" style="width:100%; height:100%; padding-left:3%; padding-right:7%;">
+				<div style="float: right; width: 50%;">
+					<div style="padding-left:6%;">
+						<p style="font-size: 40px; font-weight: bold; color:#1a1a1a;">Resources</br></p>					
+						<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Links</p>
+						
+						<p class="bodyText">- <a href=https://github.com/alvarotrigo/fullPage.js>FullPage.js</a></br>
+						- <a href=http://data.worldbank.org/indicator/NY.GDP.PCAP.CD>Data from Worldbank on GDP Per Capita</a></br>
+						- <a href=http://data.worldbank.org/indicator/NY.GDP.PCAP.CD>Data from Worldbank on GDP Per Capita</a></br>
+						- <a href=http://data.worldbank.org/indicator/SP.DYN.LE00.IN>Data from Worldbank on Life Expectancy</a></br>
+						- <a href=https://bl.ocks.org/d3noob/4db972df5d7efc7d611255d1cc6f3c4f>Multiline graph</a></br>
+						- <a href=http://bl.ocks.org/nbremer/61cd485e399b6a71d5fb2b1072fbc6c1>Vornoi Scatterplot</a></br></p>
+					</div>
+				</div>
+				<div style="float: left; width: 50%;">
+					<p style="font-size: 40px; font-weight: bold; color:#1a1a1a;">About the author<br/></p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">D3 Project</p>
+					<p class="bodyText">CS 498: Data Visualization Project from University of Illinois Urbana-Champaign.</p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">The author</p>
+					<p class="bodyText"> To know more about the author, click <a href=https://www.linkedin.com/in/harimanan/>Hari Manan</a></p>
+					<p style="font-size: 16px; font-weight: bold; color:#1a1a1a;">Disclaimer</p>
+					<p class="bodyText">This Visualization was made to satisfy the requirements of the Data Visualization Project for UIUC. All the code that was modified as a base to create some of the elements of the visualization is under the MIT Open License.</p>
+				</div>			
+			</div>
+		</div>
+		
+		
+		<a id="footer" href="#About">About this visualization</a>
+		
+		
+		//Barchart
+		<script type="text/javascript" src = "barchartcanvas.js"></script>
+		
+		//Voronoi
+			<script src="worldbank.js"></script>
+			<script src="script.js"></script>
+					
+		
+		// Multiline Chart
+		<script type="text/javascript">
+						d3.csv('multiline_data.csv', function(error, data) {
+						data.forEach(function (d) {
+							d.year = +d.year;
+							d.variableA = +d.variableA;
+							d.variableB = +d.variableB;
+							d.variableC = +d.variableC;
+							d.variableD = +d.variableD;
+						});
+
+						var chart = makeLineChart(data, 'year', {
+							'Low income': {column: 'Low income'},
+							'Lower middle income': {column: 'Lower middle income'},
+							'Upper middle income': {column: 'Upper middle income'},
+							'High income': {column: 'High income'}
+						}, {xAxis: 'Years', yAxis: 'Life Expectancy'});
+						chart.bind("#chart-line1");
+						chart.render();
+
+					});
+					</script>
+					<script src="multiline.js" charset="utf-8"></script>
+
+
+		<script>
+			
+			
+			// ************ Initialize fullpage.js ***************
+			
+			$(document).ready(function() {
+				$('#wrapper').fullpage({
+					sectionsColor: ['#FFFF99', '#f2f2f2', '#ffffff',  '#EAE1C0', 'whitesmoke', '#ccddff'],
+					navigation: true,
+					navigationPosition: 'right',
+					navigationTooltips: ['Introduction', 'Regions Life Expectancy', 'GDP vs Life Expectancy', 'Income Groups', 'About the Visualization', 'Author and Resources'],
+					anchors:['Intro', 'Regions', 'GDP', 'Income-Groups', 'About', 'Author'],
+					easingcss3: 'cubic-bezier(0.175, 0.885, 0.320, 1.275)'
+					
+				});
 			});
 
-	this.selectAll(".bar-label")
-		.data(params.data)
-		.enter()
-			.append("text")
-			.classed("bar-label", true);
-
-	//update
-	this.selectAll(".bar")
-		.transition()
-		.attr("x", function(d,i){
-			return x(d.key);
-		})
-		.attr("y", function(d,i){
-			return y(d.value);
-		})
-		.attr("height", function(d,i){
-			return height - y(d.value);
-		})
-		.attr("width", function(d){
-			return x.rangeBand();
-		})
-		.style("fill", function(d,i){
-			return ordinalColorScale(i);
-		});
-
-	this.selectAll(".bar-label")
-		.transition()
-		.attr("x", function(d,i){
-			return x(d.key) + (x.rangeBand()/2)
-		})
-		.attr("dx", 0)
-		.attr("y", function(d,i){
-			return y(d.value);
-		})
-		.attr("dy", -6)
-		.text(function(d){
-			return d.value;
-		})
-
-	//exit()
-	this.selectAll(".bar")
-		.data(params.data)
-		.exit()
-		.remove();
-
-	this.selectAll(".bar-label")
-		.data(params.data)
-		.exit()
-		.remove();
-		
-	
-		
-}
-
-sort_btn.on("click", function(){
-	var self = d3.select(this);
-	var ascending = function(a,b){
-		return a.value - b.value;
-	};
-	var descending = function(a,b){
-		return b.value - a.value;
-	}
-	var state = +self.attr("state");
-	var txt = "Sort data: ";
-	if(state === 0){
-		data.sort(ascending);
-		state = 1;
-		txt += "descending";
-	} else if(state === 1){
-		data.sort(descending);
-		state = 0;
-		txt += "ascending";
-	}
-	self.attr("state", state);
-	self.html(txt);
-
-	plot.call(chart, {
-		data: data,
-		axis:{
-			x: xAxis,
-			y: yAxis
-		},
-		gridlines: yGridlines,
-		initialize: false
-	});
-});
-
-plot.call(chart, {
-	data: data,
-	axis:{
-		x: xAxis,
-		y: yAxis
-	},
-	gridlines: yGridlines,
-	initialize: true
-});
-</script>
-</body>
+			
+		</script>
+	</body>
 </html>
